@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-c4zdzhn$8&_&7=u(z=7(r1v7%(krb=dsr=a^y38)nior+l!0_x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '.vercel.app',
+    'accounter-git-main-lucantarellis-projects.vercel.app',
+    'accounter-deddwzlzb-lucantarellis-projects.vercel.app',
+    'accounter-six.vercel.app'
+    ]
 
 
 # Application definition
