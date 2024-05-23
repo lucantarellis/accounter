@@ -1,0 +1,18 @@
+{% extends "accounting/base_generic.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <h2>Detalle de Caja: {{ caja.nombre }}</h2>
+    <p>Moneda: {{ caja.moneda }}</p>
+    <p>Total: {{ caja.total_dinero }}</p>
+
+    <h3>Movimientos</h3>
+    <ul>
+        {% for movimiento in movimientos %}
+            <li>{{ movimiento.tipo }} - {{ movimiento.cantidad }} x {{ movimiento.denominacion }} - {{ movimiento.fecha }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

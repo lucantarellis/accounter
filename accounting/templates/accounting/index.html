@@ -1,0 +1,28 @@
+{% extends "accounting/base_generic.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <h2>Resumen del Día</h2>
+    <p>Total Ingresos: {{ total_ingresos }}</p>
+    <p>Total Egresos: {{ total_egresos }}</p>
+    
+    <h3>Cajas</h3>
+    <ul>
+        {% for caja in cajas %}
+            <li><a href="{% url 'detalle_caja' caja.id %}">{{ caja.nombre }} - {{ caja.moneda }} - Total: {{ caja.total_dinero }}</a></li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Movimientos Recientes</h3>
+    <ul>
+        {% for movimiento in movimientos %}
+            <li>{{ movimiento.tipo }} - {{ movimiento.cantidad }} x {{ movimiento.denominacion }} - {{ movimiento.fecha }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'nuevo_movimiento' %}">Nuevo Movimiento</a>
+    <a href="{% url 'nueva_caja' %}">Nueva Caja</a>
+{% endblock %}
